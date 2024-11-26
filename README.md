@@ -44,7 +44,7 @@ Add the replacement policy to the configuration file.
 ```
 {
     "LLC": {
-        "prefetcher": "giplr"
+        "replacement": "giplr"
     }
 }
 ```
