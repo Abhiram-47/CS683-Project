@@ -32,12 +32,6 @@ $ ./config.sh <configuration file>
 $ make
 ```
 
-# Download DPC-3 trace
-
-Traces used for the 3rd Data Prefetching Championship (DPC-3) can be found here. (https://dpc3.compas.cs.stonybrook.edu/champsim-traces/speccpu/) A set of traces used for the 2nd Cache Replacement Championship (CRC-2) can be found from this link. (http://bit.ly/2t2nkUj)
-
-Storage for these traces is kindly provided by Daniel Jimenez (Texas A&M University) and Mike Ferdman (Stony Brook University). If you find yourself frequently using ChampSim, it is highly encouraged that you maintain your own repository of traces, in case the links ever break.
-
 # Run simulation
 
 Execute the binary directly.
@@ -52,11 +46,6 @@ The number of warmup and simulation instructions given will be the number of ins
 ```
 $ mkdir prefetcher/mypref
 $ cp prefetcher/no_l2c/no.cc prefetcher/mypref/mypref.cc
-```
-
-**Work on your algorithms with your favorite text editor**
-```
-$ vim prefetcher/mypref/mypref.cc
 ```
 
 **Compile and test**
@@ -76,10 +65,6 @@ $ make
 $ bin/champsim --warmup_instructions 200000000 --simulation_instructions 500000000 600.perlbench_s-210B.champsimtrace.xz
 ```
 
-# How to create traces
-
-Program traces are available in a variety of locations, however, many ChampSim users wish to trace their own programs for research purposes.
-Example tracing utilities are provided in the `tracer/` directory.
 
 # Evaluate Simulation
 
