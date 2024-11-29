@@ -142,7 +142,7 @@ void CACHE::update_replacement_state(uint32_t triggering_cpu, uint32_t set, uint
 
 		else {
 			for (std::size_t l = 0; l < NUM_WAY; l++) {
-				if (::recency[this][set * NUM_WAY + l] >= ipv[g][0][16] && ::recency[this][set * NUM_WAY + l] < NUM_WAY - 1)
+				if (::recency[this][set * NUM_WAY + l] >= ipv[g][k][16] && ::recency[this][set * NUM_WAY + l] < NUM_WAY - 1)
 					::recency[this][set * NUM_WAY + l]++;
 			}
 			::recency[this][set * NUM_WAY + way] = ipv[g][k][16];
@@ -180,12 +180,12 @@ void CACHE::update_replacement_state(uint32_t triggering_cpu, uint32_t set, uint
 
 			if (::counter[this][g] == COUNTER_MAX) {
 				for (std::size_t l = 0; l < NUM_POLICY; l++) {
-					::counter[this][l] == (::counter[this][l] >> 1);
+					::counter[this][l] = (::counter[this][l] >> 1);
 				}
 			}
 
 			for (std::size_t l = 0; l < NUM_WAY; l++) {
-				if (::recency[this][set * NUM_WAY + l] >= ipv[g][0][16] && ::recency[this][set * NUM_WAY + l] < NUM_WAY - 1)
+				if (::recency[this][set * NUM_WAY + l] >= ipv[g][k][16] && ::recency[this][set * NUM_WAY + l] < NUM_WAY - 1)
 					::recency[this][set * NUM_WAY + l]++;
 			}
 			::recency[this][set * NUM_WAY + way] = ipv[g][k][16];
